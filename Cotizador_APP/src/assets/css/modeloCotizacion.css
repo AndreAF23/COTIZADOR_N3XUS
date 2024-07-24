@@ -1,0 +1,55 @@
+
+.datosFesepsa span {
+    display: block;
+}
+
+.inicio {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+.celda {
+    /* Estilos para la clase "celda" */
+    border: 1px solid black; /* Agrega un borde negro de 1 píxel a todas las celdas */
+    padding: 5px; /* Añade un espacio interno de 5 píxeles dentro de las celdas para separar el texto del borde */
+}
+
+.datosCliente {
+    display: flex;
+    justify-content: space-between; /* Alinea las columnas al principio y al final del contenedor */
+    padding: 10px; /* Añade espacio interno para separar el contenido del borde */
+}
+
+
+.columna {
+    flex: 1; /* Distribuye el espacio disponible entre las columnas */
+    padding: 10px; /* Añade espacio interno a cada columna */
+    border: 1px solid black; /* Agrega un borde alrededor de cada columna */
+}
+
+.elemento {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en una fila horizontal */
+    align-items: center; /* Centra verticalmente los elementos en la fila */
+    margin-bottom: 10px; /* Agrega espacio entre elementos */
+}
+
+.elemento p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+    margin-right: 5px; /* Agrega espacio entre las etiquetas de párrafo y los valores */
+}
+
+.datosDetalle {
+    border-collapse: collapse; /* Combina los bordes de las celdas de la tabla */
+    width: 100%; /* Asegura que la tabla ocupe el ancho completo del contenedor */
+}
+
+.datosDetalle th {
+    border: 1px solid black; /* Agrega un borde de color negro alrededor de las cabeceras */
+    font-weight: bold; /* Hace que el texto de las cabeceras esté en negrita */
+    padding: 8px; /* Añade espacio interno para separar el contenido del borde */
+}
+
+.datosDetalle tr{
+    text-align: center;
+}

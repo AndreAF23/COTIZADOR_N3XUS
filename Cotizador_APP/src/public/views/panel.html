@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3XUS - Fesepsa</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../assets/css/panel.css">
+</head>
+<body class="min-h-100 bg-gray-50">
+    <div class="min-h-screen md:align-top">
+        
+        <!-- Sidebar -->
+        <aside class="bg-gray-800 px-5 py-10 min-h-screen">
+            
+            <div class="flex justify-left items-left" style="position: absolute; top: 5px;"> <!-- Centra el logo horizontal y verticalmente -->
+                <img src="../img/logo.png" alt="Logo" class="h-20 w-auto mt-6"> <!-- Tamaño, redondeado y sombra -->
+                
+            </div>
+            
+            <h1 class="text-white text-3xl font-bold mt-1 mb-5 text-center">PANEL</h1>
+            
+            <!-- Menu Item -->
+            <div class="flex items-center text-white mb-4 justify-center">
+                
+                <div class="ml-2 flex items-center justify-center flex-col">
+                    <img class="logoNexus" src="/src/public/img/logoN3XUS.png">
+                </div>
+                
+            </div>  
+            
+            <!-- Welcome Message -->
+            <div class="text-center">
+                <p class="text-white text-lg">Bienvenid@</p>
+                <p class="text-white text-lg font-semibold" id="nombreLogeado"></p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-8">
+                <a  
+                    href="../views/panel.html" 
+                    class="block px-3 py-2 text-white bg-gray-700 hover:bg-gray-600 text-lg rounded"
+                >Inicio</a>
+                
+                <p class="px-3 py-2 mt-6 text-gray-400 text-lg uppercase">Inventario</p>
+                <a 
+                    href="../views/articulos.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2"
+                >Consultar Stock</a>
+
+                <p class="px-3 py-2 mt-6 text-gray-400 text-lg uppercase">Venta</p>
+                <a 
+                    href="../views/cotizaciones.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2"
+                >Explorador de cotizaciones</a>
+                <a 
+                    href="../views/crearCotizacion.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2"
+                >Crear cotización</a>
+
+                <p class="px-3 py-2 mt-6 text-gray-400 text-lg uppercase">Clientes</p>
+                <a 
+                    href="../views/crearCliente.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2" id="rmvCod"
+                >Crear Cliente</a>
+
+                <a 
+                    href="../views/direcciones.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2" id="rmvCod"
+                >Direcciones de Entrega</a>
+
+                <p 
+                    class="px-3 py-2 mt-6 text-yellow-400 text-lg uppercase bg-gray-700 rounded cursor-pointer" 
+                    id="salir" 
+                >Cerrar Sesión</p>
+            </nav>
+        </aside>
+
+        <!-- Main Content Here -->
+        <!-- Add your main content HTML and Tailwind classes -->
+
+    </div>
+    <script src="../../assets/js/panel.js"></script>
+</body>
+</html>

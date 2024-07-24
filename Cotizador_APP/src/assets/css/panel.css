@@ -1,0 +1,49 @@
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+}
+
+.menu-item i {
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+.menu-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#disabled-input{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#numcot{
+    margin-top: 20px;
+}
+
+.totalizador{
+    display: flex;
+}
+
+.lblMoneda{
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
+.oculto{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.logoNexus{
+    width: 300px;
+}

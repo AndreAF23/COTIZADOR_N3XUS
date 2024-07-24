@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3XUS - Crear Clientes</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../assets/css/panel.css">
+</head>
+<body class="min-h-100 bg-gray-100">
+    <div class="md:flex min-h-screen md:align-top">
+            
+        <aside class="md:w-1/5 bg-gray-800 px-5 py-10 min-h-screen">
+            <h1 class="text-white text-2xl font-bold uppercase mb-10 text-center">Panel de acciones</h1>
+            
+            <div class="flex justify-center items-center" style="top: 5px;"> <!-- Centra el logo horizontal y verticalmente -->
+                <img src="../img/logo.png" alt="Logo" class="h-16 w-auto mt-6"> <!-- Tamaño, redondeado y sombra -->
+                
+            </div>
+            
+            <!-- Menu Item -->
+            <div class="flex items-center text-white mb-4 justify-center">
+                
+                <div class="ml-2 flex items-center justify-center flex-col">
+                    <img class="logoNexus" src="/src/public/img/logoN3XUS.png">
+                </div>
+                
+            </div>  
+
+            <!-- Bienvenida y usuario logeado -->
+            <div class="text-center text-white">
+                <p class="text-xl mb-2">Bienvenid@</p>
+                <p class="font-semibold text-xl" id="nombreLogeado"></p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-10">
+                <a href="../views/panel.html" class="block px-3 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded text-lg mt-4">Inicio</a>
+                
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Inventario</p>
+                <a href="../views/articulos.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Consultar Stock</a>
+
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Venta</p>
+                <a href="../views/cotizaciones.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Explorador de cotizaciones</a>
+                <a href="../views/crearCotizacion.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2" id="rmvCod">Crear cotización</a>
+
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Clientes</p>
+                <a href="../views/crearCliente.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Crear Cliente</a>
+
+                <a 
+                    href="../views/direcciones.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2" id="rmvCod"
+                >Direcciones de Entrega</a>
+
+
+                <p class="px-3 py-2 text-yellow-300 text-lg uppercase bg-gray-700 rounded cursor-pointer mt-6" id="salir">Cerrar Sesión</p>
+            </nav>
+        </aside>
+
+
+
+        <main class="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200">
+              
+            <div id="contenido" class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        
+                <div class="mb-4">
+                    <label  class="block text-gray-700 text-sm font-bold mb-2">Tipo Documento</label>
+                    <select id="tipodoc" class="block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="RUC">RUC</option>
+                        <option value="DNI">DNI</option>
+                    </select>
+                </div>
+        
+                <div class="mb-4">
+                    <label  id="lblndoc" class="block text-gray-700 text-sm font-bold mb-2">RUC</label>
+                    <input id="ndoc" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="mb-4" style="display: block;">
+                    <label id="lblrsocial" class="block text-gray-700 text-sm font-bold mb-2">Razon Social</label>
+                    <input id="rsocial" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500" style="display: block;">
+                </div>
+        
+                <div class="mb-4" style="display: none;" id="divNombre">
+                    <label  id="lblnombres" class="block text-gray-700 text-sm font-bold mb-2">Nombres</label>
+                    <input id="nombres" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500" style="display: none;">
+                </div>
+        
+                <div class="mb-4" style="display: none;" id="divApPaterno">
+                    <label  id="lblappat" class="block text-gray-700 text-sm font-bold mb-2">Ap. Paterno</label>
+                    <input id="appat" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500" style="display: none;">
+                </div>
+        
+                <div class="mb-4" style="display: none;" id="divApMaterno">
+                    <label  id="lblapmat" class="block text-gray-700 text-sm font-bold mb-2">Ap. Materno</label>
+                    <input id="apmat" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500" style="display: none;">
+                </div>
+        
+                <div class="mb-4">
+                    <label  id="lblubigeo" class="block text-gray-700 text-sm font-bold mb-2">Ubigeo</label>
+                    <input id="ubigeo" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="mb-4">
+                    <label  id="lbldirec" class="block text-gray-700 text-sm font-bold mb-2">Direccion</label>
+                    <input id="direc" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="mb-4">
+                    <label id="lblcorreo" class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
+                    <input id="correo" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="mb-4">
+                    <label id="lbltlf1" class="block text-gray-700 text-sm font-bold mb-2">Telefono 1</label>
+                    <input id="telef1" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="mb-6">
+                    <label id="lbltlf2" class="block text-gray-700 text-sm font-bold mb-2">Telefono 2</label>
+                    <input id="telef2" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500">
+                </div>
+        
+                <div class="md:flex justify-between items-center w-100">
+                    <button id="consultarSunat" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-48 my-2 md:my-0">
+                        Consultar Datos
+                    </button>
+                    <button id="crearCliente" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full  md:w-48">
+                        Registrar Cliente
+                    </button>
+                </div>
+                
+            </div>
+             
+        </main>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../../assets/js/panel.js"></script> 
+  <script src="../../assets/js/crearCliente.js"></script>   
+</body>
+</html>

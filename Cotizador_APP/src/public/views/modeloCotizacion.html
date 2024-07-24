@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
+</head>
+<body class="bg-gray-100 font-sans antialiased" id="elementoExportar">
+
+    <div class="container mx-auto my-8 p-4 md:p-8 bg-white shadow-lg rounded-lg">
+        <div class="header flex  justify-between md:justify-between items-center mb-6">
+            <img src="../img/logoFesepsa.png" class="h-12 md:h-20 mb-4 md:mb-0">
+            <button id="exportar" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Exportar
+            </button>
+            <button id="volver" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Volver
+            </button>
+            <div class="text-center md:text-right">
+                <p class="md:text-xl font-semibold">R.U.C. 20100004080</p>
+                <h1 class="md:text-3xl font-bold text-blue-600">COTIZACIÓN</h1>
+                <p class="text-red-500" id="nro-cotizacion"></p>
+            </div>
+        </div>
+
+        <div class="company-info mb-6 text-sm">
+            <p>Av. Elmer Faucett T Nro.390 Urb. La colonial Prov. Const. Del Callao - Callao</p>
+            <p>Correo: ventas@fesepsa.pe | cobranza@fesepsa.pe | calibracion@fesepsa.pe | comercialfesepsa@fesepsa.pe</p>
+            <p>Telefono: 451-1052 / 451-4787</p>
+            <p>Pag. Web: www.fesepsa.com.pe</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="columna">
+                <p><strong>R.U.C. / D.N.I.:</strong> <span id="ruc-cliente" class="text-sm"></span> </p>
+                <p><strong>Cliente:</strong> <span id="nombre-cliente" class="text-sm"></span> </p>
+                <p><strong>Dirección:</strong> <span id="direccion-cliente" class="text-sm"></span></p>
+                <p><strong>Telefono:</strong> <span id="telefono-cliente" class="text-sm"></span></p>
+                <p><strong>Correo:</strong> <span id="correo-cliente" class="text-sm"></span></p>
+                <p><strong>Fec. Emisión:</strong> <span id="fec-emision" class="text-sm"></span></p>
+                <!-- Más detalles del cliente aquí -->
+            </div>
+            <div class="columna">
+                <p><strong>Orden de Compra</strong> <span id="panelOC" class="text-sm"></span></p>
+                <p><strong>Moneda:</strong> <span id="moneda-cotizacion" class="text-sm"></span></p>
+                <p><strong>Nom. Vendedor:</strong> <span id="nombre-vendedor" class="text-sm"></span></p>
+                <p><strong>Telef. Vendedor: </strong> <span id="telefono-vendedor" class="text-sm"></span></p>
+                <p><strong>E-mail Vendedor:  </strong> <span id="correo-vendedor" class="text-sm"></span></p>
+                <p><strong>Fec. Vencimiento: </strong> <span id="fec-vencimiento" class="text-sm"></span></p>
+                <!-- Más detalles del vendedor aquí -->
+            </div>
+        </div>
+        
+        <div class="py-2 overflow-x-auto">
+            <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+
+        <table class="min-w-full mb-8 text-sm border-collapse border border-gray-700">
+            <thead class="bg-gray-300">
+                <tr>
+                    <th>Item</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Cant.</th>
+                    <th>P. Unit</th>
+                    <th>Importe</th>
+                </tr>
+            </thead>
+            <tbody class="text-center" id="tbodyDetalle">
+            
+                <!-- Más productos aquí -->
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+        <p class="mb-3"><strong>CONDICIONES COMERCIALES</strong></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <p><strong>Forma de Pago: </strong><span id="formaPago"></span></p>
+                <p><strong>Validez de la oferta: </strong><span id="validezOferta"></span></p>
+                <p><strong>Observaciones: </strong><span id="observaciones"></span> </p>
+                <!-- Más condiciones aquí -->
+            </div>
+            <div>
+                <p><strong>OP. GRAVADAS: </strong><span id="subTotal"></span></p>
+                <p><strong>I.G.V. 18%: </strong><span id="igv"></span></p>
+                <p><strong>IMPORTE TOTAL: </strong><span id="total"></span></p>
+            </div>
+        </div>
+
+        <div class="py-2 overflow-x-auto">
+            <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+        <div class="my-8">
+             <table class="min-w-full text-sm min-w-full mb-8 text-sm border-collapse border border-gray-700">
+                 <thead class="bg-gray-300">
+                      <tr>
+                           <th colspan="4" class="border border-gray-700">CUENTAS BANCARIAS</th>
+                      </tr>
+                      <tr>
+                         <th class="border border-gray-700">BANCO</th>
+                         <th class="border border-gray-700">MONEDA</th>
+                         <th class="border border-gray-700">CTA. CTE.</th>
+                         <th class="border border-gray-700">CCI</th>
+                      </tr>
+                 </thead>
+                 <tbody class="text-center">
+                      <tr>
+                         <td class="border border-gray-700"><img src="../img/bcp-logo.png" alt="" class="h-8 block m-auto"></td>
+                         <td class="border border-gray-700">SOLES</td>
+                         <td class="border border-gray-700">192-0348160-0-67</td>
+                         <td class="border border-gray-700">002-19200034816006738</td>
+                     </tr> 
+                     <tr>
+                        <td class="border border-gray-700"><img src="../img/interbank.png" alt="" class="h-8 block m-auto"></td>
+                        <td class="border border-gray-700">SOLES</td>
+                        <td class="border border-gray-700">100-0003248927</td>
+                        <td class="border border-gray-700">003-100-000003248927-50</td>
+                    </tr> 
+                    <tr>
+                        <td class="border border-gray-700"><img src="../img/bbva.png" alt="" class="h-8 block m-auto"></td>
+                        <td class="border border-gray-700">SOLES</td>
+                        <td class="border border-gray-700">0011-0166-0100000370-65</td>
+                        <td class="border border-gray-700">011-166-000100000370-65</td>
+                    </tr> 
+                    <tr>
+                        <td class="border border-gray-700"><img src="../img/BancoNacion.png" alt="" class="h-8 block m-auto"></td>
+                        <td class="border border-gray-700">SOLES</td>
+                        <td class="border border-gray-700">00-000-427462</td>
+                        <td class="border border-gray-700"></td>
+                    </tr> 
+                     <!-- Más cuentas bancarias aquí -->
+                 </tbody>
+             </table>-
+        </div>
+        </div>
+        </div>
+    </div>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="../../assets/js/generarPDF.js"></script>
+    <script src="../../assets/js/exportarPDF.js"></script>
+</body>
+</html>

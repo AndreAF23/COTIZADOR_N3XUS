@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3XUS - Crear Cotización</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../assets/css/panel.css">
+</head>
+<body class="min-h-100 bg-gray-200">
+    <div class="md:flex min-h-screen md:align-top">
+
+        <aside class="md:w-1/5 bg-gray-800 px-5 py-10 min-h-screen">
+            <h1 class="text-white text-2xl font-bold uppercase mb-10 text-center">Panel de acciones</h1>
+            
+            <div class="flex justify-center items-center" style="top: 5px;"> <!-- Centra el logo horizontal y verticalmente -->
+                <img src="../img/logo.png" alt="Logo" class="h-16 w-auto mt-6"> <!-- Tamaño, redondeado y sombra -->
+            </div>
+            
+            <!-- Menu Item -->
+            <div class="flex items-center text-white mb-4 justify-center">
+                
+                <div class="ml-2 flex items-center justify-center flex-col">
+                    <img class="logoNexus" src="/src/public/img/logoN3XUS.png">
+                </div>
+                
+            </div>  
+            <!-- Bienvenida y usuario logeado -->
+            <div class="text-center text-white">
+                <p class="text-xl mb-2">Bienvenid@</p>
+                <p class="font-semibold text-xl" id="nombreLogeado"></p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-10">
+                <a href="../views/panel.html" class="block px-3 py-2 text-white bg-gray-700 hover:bg-gray-600 rounded text-lg mt-4">Inicio</a>
+                
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Inventario</p>
+                <a href="../views/articulos.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Consultar Stock</a>
+
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Venta</p>
+                <a href="../views/cotizaciones.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Explorador de cotizaciones</a>
+                <a href="../views/crearCotizacion.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2" id="rmvCod">Crear cotización</a>
+
+                <p class="px-3 py-2 text-yellow-300 text-lg mt-6 uppercase">Clientes</p>
+                <a href="../views/crearCliente.html" class="block px-3 py-2 text-white hover:bg-gray-600 rounded text-lg mt-2">Crear Cliente</a>
+
+                <a 
+                    href="../views/direcciones.html" 
+                    class="block px-3 py-2 text-white hover:bg-gray-600 hover:text-yellow-400 text-lg rounded mt-2" id="rmvCod"
+                >Direcciones de Entrega</a>
+
+
+                <p class="px-3 py-2 text-yellow-300 text-lg uppercase bg-gray-700 rounded cursor-pointer mt-6" id="salir">Cerrar Sesión</p>
+            </nav>
+        </aside>
+
+
+        <main class="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200">
+              
+            <div class="p-6 bg-gray-100">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-semibold text-gray-700">Cotización / Nuevo</h1>
+                    <div class="mt-4">
+                        <button id="creCoti" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mr-2">Guardar</button>
+                        <button id="dscCoti" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Descartar</button>
+                        <div id="numcot">
+                            <label>N° Cotizacion</label>
+                            <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Disabled input" disabled>
+                        </div>
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Orden de Compra</label>
+                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Orden de Compra" required>
+                        <!-- ... other buttons ... -->
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Observacion</label>
+                        <input type="text" id="obs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nota" required>
+                    </div>
+                </div>
+            
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- <div>
+                        <label for="clVendedor" class="block text-sm font-medium text-gray-700">Cliente</label>
+                        <select name="" id="clVendedor" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">--Seleccionar--</option>
+                        </select>
+                    </div> -->
+                    <div>
+                        <label  id="lblndoc" class="block text-sm font-medium text-gray-700">Cliente</label>
+                        <input id="clVendedor" list="clientes" type="text"   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <datalist id="clientes"></datalist>
+                    </div>  
+                    <div>
+                        <label  class="block text-sm font-medium text-gray-700">Cliente Direcciones</label>
+                        <select name="" id="clVendedorDirecciones" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">--Seleccionar--</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label  class="block text-sm font-medium text-gray-700">Lista de Precios</label>
+                        <select name="" id="lstPrecios" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="1">LISTA DE PRECIOS BASE</option>
+                            <option value="2">TARIFA DESCUENTO CONTADO 25</option>
+                            <option value="3">TARIFA DESCUENTO CONTADO 25 + 3</option>
+                            <option value="4">TARIFA DESCUENTO CONTADO 25 + 6</option>
+                            <option value="5">TARIFA DESCUENTO CREDITO 22</option>
+                            <option value="6">TARIFA DESCUENTO CREDITO 22 + 3</option>
+                            <option value="7">TARIFA DESCUENTO CREDITO 22 + 6</option>
+                            <option value="8">TARIFA DESCUENTO INDUSTRIAL 15</option>
+                        </select>
+                    </div>
+            
+                    <div >
+                        <label class="block text-sm font-medium text-gray-700">Plazo de pagos</label>
+                        <select name="" id="plzPagos" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </select>
+     
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Moneda</label>
+                        <select id="moneda"  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                             <option value="DOLARES">Dolares</option>
+                             <option value="SOLES">Soles</option>
+                        </select>
+                         
+                    </div>
+                    
+                    <div class="hidden">
+                        <label class="block text-sm font-medium text-gray-700">Tipo de Cambio</label>
+                        <h2 id="tipoCambio"  class="text-2xl font-semibold text-red-700 bg-yellow-300 w-16 text-center" ></h2> 
+
+                        <div class="flex items-center mb-4">
+                            <input checked id="tcsunat" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tipo de Cambio Sunat</label>
+                        </div>
+                        <div class="flex items-center hidden" id="cajitaTipoCambio">
+                            <input id="tcmanual" type="radio" value="" name="default-radio" class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tipo de Cambio Manual</label>
+                        </div>
+
+                    </div>
+                    <!-- More input fields... -->
+            
+                </div>
+
+                <div class="py-2 overflow-x-auto">
+                <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                <table class="min-w-full leading-normal mt-6">
+                    <thead >
+                        <tr>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Codigo
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Descripción
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Marca
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Cantidad
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Precio Lista
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Precio Unitario
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Importe
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Stock
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Accion
+                            </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody id="bdTabla" class="text-gray-700">
+                        <tr id="nodoExistente">
+                            <td colspan="20" class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <btn id="insFila" class="text-blue-500 hover:text-blue-800 cursor-pointer">Añadir un elemento</btn>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                </div> 
+                <!-- ... additional content ... -->
+                <div class="oculto">            
+                <div class="totalizador">
+                    <h1>SubTotal :</h1><span class="lblMoneda">$</span><span id="subtTotalGlobal"></span>
+                </div>
+                <div class="totalizador">
+                    <h2>IGV 18%  :</h2><span class="lblMoneda">$</span><span id="subtIGV"></span>
+                </div>
+                <div class="totalizador">
+                    <h3>Total    :</h3><span class="lblMoneda">$</span><span id="TotalGlobal"></span>
+                </div>
+            </div>
+            </div>
+            
+        </main>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../../assets/js/panel.js"></script> 
+  <script src="../../assets/js/crearCotizacion.js"></script>
+
+
+</body>
+</html>
